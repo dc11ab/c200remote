@@ -2,7 +2,7 @@
 // A PHP script to send remote commands to the Popcorn Hour C-200.
 // By dc11ab, November 15, 2009.
 // 11/16/2009 - Modified by Blade to allow direct commands and friendly command names
-// WTFPL
+// See README.NFO for more information.
 
 $cmd=$_GET['cmd'];
 $fcmd=$_GET['fcmd'];
@@ -36,6 +36,7 @@ if($fcmd != NULL && $fcmd != '')
 {
     switch ($fcmd)
     {
+   // Here we can add more commands when found, or add more aliases for each command. 
         case "power":
             sendCommand("x");
             break;
@@ -213,4 +214,4 @@ if($fcmd != NULL && $fcmd != '')
 
 <html><head></head><body></br>...but if you see this for too long, something is wrong.</br>
 </br> Try pressing Back on your browser or navigate to:
- http://PCH-C200:9999/C200webremote_web/</body></html>
+ http://PCH-C200:9999/c200remote_web/</body></html>
