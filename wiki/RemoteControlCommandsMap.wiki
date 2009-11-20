@@ -1,11 +1,7 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-These are the knows commands that we can send.
+#summary This page lists the known commands mapped via characters.
 
 
-= Details =
+= Remote control layout =
 <pre>
 x=On/Off    j=Eject
 
@@ -21,7 +17,7 @@ P=Video G=Music Y=Photo K=All
 v=Return B=Source
 
               U=Up
-L=Left Enter=OK R=Right
+L=Left -- \n (press Enter)=OK -- R=Right
              D=Down
 i=INFO s=Stop
 
