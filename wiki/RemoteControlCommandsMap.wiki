@@ -1,0 +1,35 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+These are the knows commands that we can send.
+
+
+= Details =
+<pre>
+x=On/Off    j=Eject
+
+T=TV Mode  e=Setup h=BT
+
+         1=1 2=2 3=3
+         4=4 5=5 6=6
+         7=7 8=8 9=9
+c=Delete  0=0 l=CAPS/NUM
+O=Home g=File Mode H=Time Seek
+P=Video G=Music Y=Photo K=All
+
+v=Return B=Source
+
+              U=Up
+L=Left Enter=OK R=Right
+             D=Down
+i=INFO s=Stop
+
++=PgUp(Vol+)----y=Play
+-=PgDn(Vol- )----p=Pause
+
+u=Mute w=Rev f=FWD
+m=Menu E=Prev n=Next
+t=Title r=Repeat d=Slow
+N=Angle a=Audio b=Subtitle z=Zoom
+</pre>
