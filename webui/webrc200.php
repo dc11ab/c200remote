@@ -90,6 +90,7 @@ if($fcmd != NULL && $fcmd != '')
             break;
         case "capsnum":
             sendCommand("l");
+            break;
         case "filemode":
             sendCommand("g");
             break;
