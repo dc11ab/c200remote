@@ -1,7 +1,5 @@
-#summary A change log for releases made to the c200remote
+#summary A change log for releases made for the c200remote project
 
-= Abstract =
-This release note wiki page contains a short description of the changes made for each release.
 ==Production releases ==
 === 1.0.1 ===
 22nd November 2009
