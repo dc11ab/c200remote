@@ -78,7 +78,7 @@ http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
 ||A|| _?_ ||(unknown)||
 ||B||source||SOURCE||
 ||C|| _?_ |(unknown)||
-||D||down||DOWN||
+||D||down||DOWN on the Navpad. ||
 ||E||prev||PREV: Skips to previous track in playlist, but this does not fully work?||
 ||F|| _?_ ||(unknown)||
 ||G||music<br>green||MUSIC (Green) filter button.||
@@ -86,7 +86,7 @@ http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
 ||I|| _?_ ||(unknown)||
 ||J|| _?_ ||(unknown)||
 ||K||allfiles<br>blue||All (Blue) non-filter button. ||
-||L||left||LEFT||
+||L||left||LEFT on the Navpad. ||
 ||M|| _?_ ||(unknown)||
 ||N||angle||ANGLE||
 ||O||home||HOME||
