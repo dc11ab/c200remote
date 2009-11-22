@@ -47,31 +47,31 @@ http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
 || 8 || 8 || As above but (80%) ||
 || 9 || 9 || As above but (90%) ||
 || \n || enter || Push Enter/OK button. Note: this is a non-printable line feed character.||
-||+|| volup || PAGE UP / VOLUME UP ||
-||-|| voldown || PAGE DOWN / VOLUME DOWN ||
+||+|| pgup<br>volup || PAGE UP / VOLUME UP ||
+||-|| pgdown<br>voldown || PAGE DOWN / VOLUME DOWN ||
 ||a|| audio || AUDIO ||
 ||b|| subs || SUBTITLE ||
-||c|| del || DELETE ||
+||c|| delete || DELETE ||
 ||d|| slow || SLOW ||
 ||e|| setup || SETUP ||
-||f|| fwd || FORWARD: Fast forward ||
+||f|| forward || FORWARD: Fast forward ||
 ||g|| filemode || FILE MODE ||
-||h|| bt ||BT/SUSPEND ||
+||h|| btsuspend ||BT/SUSPEND ||
 ||i|| info ||INFO||
 ||j|| eject ||EJECT||
 ||k|| _?_ ||(unknown)||
-||l|| caps ||CAPS/NUM||
+||l|| capsnum ||CAPS/NUM||
 ||m|| menu ||MENU ||
 ||n|| next ||NEXT ||
 ||o|| _?_ || (unknown; does cause pause/rewind during playback?)||
 ||p|| pause || PAUSE ||
 ||q|| _?_ ||(unknown)||
-||r||repeat||REPEAT||
-||s||stop||STOP||
-||t||title||TITLE||
-||u||mute||MUTE||
-||v||return||RETURN||
-||w||rev||REV: Rewind ||
+||r|| repeat ||REPEAT||
+||s|| stop||STOP||
+||t|| title ||TITLE||
+||u|| mute ||MUTE||
+||v|| return ||RETURN||
+||w|| reverse ||REV: Reverse/rewind playback. ||
 || x || power || Push Power button; toggles between ON and STAND BY.||
 ||y||play||PLAY: Starts to play media in playlist mode.||
 ||z||zoom||ZOOM||
@@ -81,16 +81,16 @@ http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
 ||D||down||DOWN||
 ||E||prev||PREV: Skips to previous track in playlist, but this does not fully work?||
 ||F|| _?_ ||(unknown)||
-||G||green||MUSIC (Green) filter button.||
-||H||tseek||TIME SEEK||
+||G||music<br>green||MUSIC (Green) filter button.||
+||H||timeseek||TIME SEEK||
 ||I|| _?_ ||(unknown)||
 ||J|| _?_ ||(unknown)||
-||K||blue||All (Blue) non-filter button. ||
+||K||allfiles<br>blue||All (Blue) non-filter button. ||
 ||L||left||LEFT||
 ||M|| _?_ ||(unknown)||
 ||N||angle||ANGLE||
-||O||homr||HOME||
-||P||red||VIDEO (Red) filter button.||
+||O||home||HOME||
+||P||video<br>red||VIDEO (Red) filter button.||
 ||Q|| _?_ ||(unknown)||
 ||R||right||RIGHT on the Navpad.||
 ||S|| _?_ ||(unknown)||
@@ -99,5 +99,5 @@ http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
 ||V|| _?_ ||(unknown)||
 ||W|| _?_ ||(unknown)||
 ||X|| _?_ ||(unknown)||
-||Y|| yellow|| PHOTO (Yellow) filter button.||
+||Y|| photo<br>yellow|| PHOTO (Yellow) filter button.||
 ||Z|| _?_ ||(unknown)||
