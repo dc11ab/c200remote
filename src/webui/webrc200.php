@@ -200,13 +200,13 @@ if($fcmd != NULL && $fcmd != '')
             sendCommand("n");
             break;
         case "previous":
-            sendCommand("");
+            sendCommand("E");
             break;
         case "filemode":
-            sendCommand("");
+            sendCommand("g");
             break;
         case "slow":
-            sendCommand("");
+            sendCommand("d");
             break;
     }
 }
