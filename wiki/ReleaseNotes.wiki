@@ -13,4 +13,4 @@
 == Planned future release ==
 === 1.1.0 ===
 No date announced
- * Create iPhone skin.
+ * Create working iPhone skin.
