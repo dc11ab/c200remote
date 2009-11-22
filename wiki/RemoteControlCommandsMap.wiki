@@ -63,14 +63,14 @@ http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
 ||l|| caps ||CAPS/NUM||
 ||m|| menu ||MENU ||
 ||n|| next ||NEXT ||
-||o|| _?_ || (unknown; does cause pause/rewind during playback?)
+||o|| _?_ || (unknown; does cause pause/rewind during playback?)||
 ||p|| pause || PAUSE ||
 ||q|| _?_ ||(unknown)||
 ||r||repeat||REPEAT||
 ||s||stop||STOP||
 ||t||title||TITLE||
 ||u||mute||MUTE||
-||v||return||RETURN
+||v||return||RETURN||
 ||w||rev||REV: Rewind ||
 || x || power || Push Power button; toggles between ON and STAND BY.||
 ||y||play||PLAY: Starts to play media in playlist mode.||
@@ -97,7 +97,7 @@ http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
 ||T||tvmode||TV MODE||
 ||U||up||UP button on the Navpad.||
 ||V|| _?_ ||(unknown)||
-||W=|| _?_ ||(unknown)||
+||W|| _?_ ||(unknown)||
 ||X|| _?_ ||(unknown)||
 ||Y|| yellow|| PHOTO (Yellow) filter button.||
 ||Z|| _?_ ||(unknown)||
