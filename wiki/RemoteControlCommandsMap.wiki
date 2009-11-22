@@ -32,72 +32,72 @@ N=Angle a=Audio b=Subtitle z=Zoom
 </pre>
 
 == 0-9 a-Z ==
-0=0
-1=1
-2=2
-3=3
-4=4
-5=5
-6=6
-7=7
-8=8
-9=9
+For a full explanation of the remote control functions, please read the NMT wiki:<br>
+http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
 
-+=PAGE UP(Vol+)
--=PAGE DOWN(Vol- )
-
-\n=(Enter button, non-printable line feed character)
-
-a=AUDIO
-b=SUBTITLE
-c=DELETE
-d=SLOW
-e=SETUP
-f=FWD
-g=FILE MODE
-h=BT/SUSPEND
-i=INFO
-j=EJECT
-k=(unknown)
-l=CAPS/NUM
-m=MENU
-n=NEXT
-o=(unknown; does cause pause/rewind during playback?)
-p=PAUSE
-q=(unknown)
-r=REPEAT
-s=STOP
-t=TITLE
-u=MUTE
-v=RETURN
-w=REV
-x=ON/StandBy (Powerbutton)
-y=PLAY
-z=ZOOM
-
-A=(unknown)
-B=SOURCE
-C=(unknown)
-D=DOWN
-E=PREV
-F=(unknown)
-G=MUSIC (Green)
-H=TIME SEEK
-I=(unknown)
-J=(unknown)
-K=All (Blue)
-L=LEFT
-M=(unknown)
-N=ANGLE
-O=HOME
-P=VIDEO (Red)
-Q=(unknown)
-R=RIGHT
-S=(unknown)
-T=TV MODE
-U=UP
-V=(unknown)
-W=(unknown)
-X=(unknown)
-Y=PHOTO (Yellow)
-Z=(unknown)
+|| *Raw command* || *Alias* || *Comment* ||
+|| 0 || 0 || Go to beginning of media clip (0%) ||
+|| 1 || 1 || Go to item 1 in list or 10% of played media. ||
+|| 2 || 2 || As above but (20%) ||
+|| 3 || 3 || As above but (30%) ||
+|| 4 || 4 || As above but (40%) ||
+|| 5 || 5 || As above but (50%) ||
+|| 6 || 6 || As above but (60%) ||
+|| 7 || 7 || As above but (70%) ||
+|| 8 || 8 || As above but (80%) ||
+|| 9 || 9 || As above but (90%) ||
+|| \n || enter || Push Enter/OK button. Note: this is a non-printable line feed character.||
+||+|| volup || PAGE UP / VOLUME UP ||
+||-|| voldown || PAGE DOWN / VOLUME DOWN ||
+||a|| audio || AUDIO ||
+||b|| subs || SUBTITLE ||
+||c|| del || DELETE ||
+||d|| slow || SLOW ||
+||e|| setup || SETUP ||
+||f|| fwd || FORWARD: Fast forward ||
+||g|| filemode || FILE MODE ||
+||h|| bt ||BT/SUSPEND ||
+||i|| info ||INFO||
+||j|| eject ||EJECT||
+||k|| _?_ ||(unknown)||
+||l|| caps ||CAPS/NUM||
+||m|| menu ||MENU ||
+||n|| next ||NEXT ||
+||o|| _?_ || (unknown; does cause pause/rewind during playback?)
+||p|| pause || PAUSE ||
+||q|| _?_ ||(unknown)||
+||r||repeat||REPEAT||
+||s||stop||STOP||
+||t||title||TITLE||
+||u||mute||MUTE||
+||v||return||RETURN
+||w||rev||REV: Rewind ||
+|| x || power || Push Power button; toggles between ON and STAND BY.||
+||y||play||PLAY: Starts to play media in playlist mode.||
+||z||zoom||ZOOM||
+||A|| _?_ ||(unknown)||
+||B||source||SOURCE||
+||C|| _?_ |(unknown)||
+||D||down||DOWN||
+||E||prev||PREV: Skips to previous track in playlist, but this does not fully work?||
+||F|| _?_ ||(unknown)||
+||G||green||MUSIC (Green) filter button.||
+||H||tseek||TIME SEEK||
+||I|| _?_ ||(unknown)||
+||J|| _?_ ||(unknown)||
+||K||blue||All (Blue) non-filter button. ||
+||L||left||LEFT||
+||M|| _?_ ||(unknown)||
+||N||angle||ANGLE||
+||O||homr||HOME||
+||P||red||VIDEO (Red) filter button.||
+||Q|| _?_ ||(unknown)||
+||R||right||RIGHT on the Navpad.||
+||S|| _?_ ||(unknown)||
+||T||tvmode||TV MODE||
+||U||up||UP button on the Navpad.||
+||V|| _?_ ||(unknown)||
+||W=|| _?_ ||(unknown)||
+||X|| _?_ ||(unknown)||
+||Y|| yellow|| PHOTO (Yellow) filter button.||
+||Z|| _?_ ||(unknown)||
