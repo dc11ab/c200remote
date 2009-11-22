@@ -1,0 +1,18 @@
+#summary A change log for releases made to the c200remote
+
+= Abstract =
+This release note wiki page contains a short description of the changes made for each release.
+==Production releases ==
+=== 1.0.1 ===
+22nd November 2009
+ * Fixed known missing- and duplicate commands: PREV, SLOW and FILE MODE.
+ * Added a non-working iphone skin, to be further developed in coming versions.
+
+=== 1.0.0  ===
+18th November 2009
+ * Hello World, first public release!
+
+== Planned future release ==
+=== 1.1.0 ===
+No date announced
+ * Create iPhone skin.
