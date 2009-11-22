@@ -1,7 +1,8 @@
 #summary This page lists the known commands mapped via characters.
 
+= Remote control commands =
 
-= Remote control layout =
+== Original layout ==
 <pre>
 x=On/Off    j=Eject
 
@@ -14,12 +15,12 @@ c=Delete  0=0 l=CAPS/NUM
 O=Home g=File Mode H=Time Seek
 P=Video G=Music Y=Photo K=All
 
-v=Return B=Source
+v=RETURN B=SOURCE
 
-              U=Up
-L=Left -- \n (press Enter)=OK -- R=Right
-             D=Down
-i=INFO s=Stop
+              U=UP
+L=LEFT -- \n (press Enter)=OK -- R=RIGHT
+             D=DOWN
+i=INFO s=STOP
 
 +=PgUp(Vol+)----y=Play
 -=PgDn(Vol- )----p=Pause
@@ -29,3 +30,74 @@ m=Menu E=Prev n=Next
 t=Title r=Repeat d=Slow
 N=Angle a=Audio b=Subtitle z=Zoom
 </pre>
+
+== 0-9 a-Z ==
+0=0
+1=1
+2=2
+3=3
+4=4
+5=5
+6=6
+7=7
+8=8
+9=9
+
++=PAGE UP(Vol+)
+-=PAGE DOWN(Vol- )
+
+\n=(Enter button, non-printable line feed character)
+
+a=AUDIO
+b=SUBTITLE
+c=DELETE
+d=SLOW
+e=SETUP
+f=FWD
+g=FILE MODE
+h=BT/SUSPEND
+i=INFO
+j=EJECT
+k=(unknown)
+l=CAPS/NUM
+m=MENU
+n=NEXT
+o=(unknown; does cause pause/rewind during playback?)
+p=PAUSE
+q=(unknown)
+r=REPEAT
+s=STOP
+t=TITLE
+u=MUTE
+v=RETURN
+w=REV
+x=ON/StandBy (Powerbutton)
+y=PLAY
+z=ZOOM
+
+A=(unknown)
+B=SOURCE
+C=(unknown)
+D=DOWN
+E=PREV
+F=(unknown)
+G=MUSIC (Green)
+H=TIME SEEK
+I=(unknown)
+J=(unknown)
+K=All (Blue)
+L=LEFT
+M=(unknown)
+N=ANGLE
+O=HOME
+P=VIDEO (Red)
+Q=(unknown)
+R=RIGHT
+S=(unknown)
+T=TV MODE
+U=UP
+V=(unknown)
+W=(unknown)
+X=(unknown)
+Y=PHOTO (Yellow)
+Z=(unknown)
