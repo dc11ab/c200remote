@@ -1,4 +1,4 @@
-#summary This page lists the known commands mapped via characters.
+#summary This page lists the known commands mapped via characters and aliases.
 
 = Remote control commands =
 
@@ -34,6 +34,7 @@ N=Angle a=Audio b=Subtitle z=Zoom
 == 0-9 a-Z ==
 For a full explanation of the remote control functions, please read the NMT wiki:<br>
 http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
+The Alias is a "friendly" name given the remote command which can be extended or changed to each liking, just edit the webrc200.php.<br>
 
 || *Raw command* || *Alias* || *Comment* ||
 || 0 || 0 || Go to beginning of media clip (0%) ||
