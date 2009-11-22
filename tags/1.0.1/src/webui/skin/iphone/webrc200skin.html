@@ -1,0 +1,122 @@
+<?php include='../../webrc200.php' ?>
+<html>
+<head>
+	<title>iRemoteControl C200</title>
+	<style "text/css">
+		div.section {
+			background:silver;
+    		padding: 0.1em;
+	    	border-width:2px;
+			border-style:solid;
+			border-color:grey;
+	    	width:249px;
+	    	margin-left:auto;
+	    	margin-top:2px;
+	    	margin-right:auto;
+	    	float:left;
+    	}
+ 		button.standard {
+ 			width:60px;
+ 			height:20px;
+ 			padding: 0.1em;
+ 			margin-left:auto;
+ 			margin-right:auto;
+ 		 }
+
+		#buttons {
+			background-color:silver;
+		}
+
+		<!-- /* :hover is a pseudo selector to use to set the mouseover attributes */ -->
+		#buttons:hover {
+			background-color: #F9F9F9; }
+
+	</style>
+	
+	<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+	<!-- //
+	function passCommand(command) {
+		//command="webrc200.php?cmd="+command
+		document.location = "webrc200.php?cmd="+command
+		}
+	function passfCommand(fcommand) {
+		//command="webrc200v7.php?fcmd="+fcommand
+		document.location = "webrc200.php?fcmd="+fcommand
+		}
+	// -->
+	</SCRIPT> 
+
+</head>
+<body>
+<div id="RemoteArea" style="background-color:black;height:540px;width:260px;margin-left:0px;margin-top:0px;padding:0.1em;">
+
+	<div class="section" name="SectionA">
+	<button class="standard" id="buttons" onclick="passCommand(x)">POWER</button><button class="standard" id="buttons" style="position:relatative;margin-left:50%;" onclick="passCommand(j)">EJECT</button>
+	</div>
+
+	<div class="section" name="SectionB">
+	<button class="standard" id="buttons" onclick="passCommand(1)">1. :/@</button><button class="standard" id="buttons" onclick="passCommand(2)">2 &nbsp;abc</button>
+	<button class="standard" id="buttons" onclick="passCommand(3)">3 &nbsp;def</button></br>
+	<button class="standard" id="buttons" onclick="passCommand(4)">4 &nbsp;ghi</button><button class="standard" id="buttons" onclick="passCommand(5)">5 &nbsp;jkl</button>
+	<button class="standard" id="buttons" onclick="passCommand(6)">6 &nbsp;mno</button></br>
+	<button class="standard" id="buttons" onclick="passCommand(7)">7 pqrs</button><button class="standard" id="buttons" onclick="passCommand(8)">8 &nbsp;tuv</button>
+	<button class="standard" id="buttons" onclick="passCommand(9)">9 &nbsp;def</button></br>
+	<button class="standard" id="buttons" onclick="passCommand(c)">DELETE</button><button class="standard" id="buttons" onclick="passCommand(0)">0 &nbsp;&#95;</button>
+	<button class="standard" id="buttons" onclick="passCommand(l)">C/NUM</button></br>
+	<button class="standard" id="buttons" onclick="passCommand(O)">HOME</button><button class="standard" id="buttons" onclick="passCommand(g)">FILE M</button>
+	<button class="standard" id="buttons" onclick="passCommand(H)">T SEEK</button>
+	</br>
+	</div>
+
+	<div class="section" name="SectionC">
+	<button	 style="margin-left:5%;width:45px;height:20px;background-color:red;"  onclick="passfCommand(red)">&nbsp;</button><button style="margin-left:5%;width:45px;height:20px;background-color:green;"  onclick="passfCommand(green)">&nbsp;</button><button style="margin-left:5%;width:45px;height:20px;background-color:yellow;" onclick="passfCommand(yellow)">&nbsp;</button><button style="margin-left:5%;margin-right:auto;width:45px;height:20px;background-color:blue;" onclick="passfCommand(blue)">&nbsp;</button>
+	</br>
+	</div>
+
+	<div class="section" name="SectionD">
+	<button class="standard" id="buttons" onclick="passCommand(v)">RETURN</button><button class="standard" id="buttons"style="position:relatative;margin-left:50%;" onclick="passCommand(B)">SOURCE</button>
+	</div>
+
+	<div class="section" name="SectionE">
+	-------------- <button class="standard" id="buttons" onclick="passCommand(u)">UP</button> --------------
+	</br> 
+	<button class="standard" id="buttons" onclick="passCommand(L)">LEFT</button> - <button  class="standard" id="buttons"" onclick="passfCommand(enter)">OK/Enter</button> - <button class="standard" id="buttons" onclick="passCommand(R)">RIGHT</button>
+	</br>
+	------------- <button class="standard" id="buttons" onclick="passCommand(D)">DOWN</button> -------------
+	</br> 
+	</div>
+	
+	<div class="section" name="SectionF">
+	<button class="standard" id="buttons" onclick="passCommand(i)">INFO</button><button class="standard" id="buttons" style="position:relatative;margin-left:50%;" onclick="passCommand(s)">STOP</button>
+	</div>
+
+	<div class="section" name="SectionG">
+	<button class="standard" id="buttons" style="height:40;" onclick="passCommand(+)">VOL UP</button> - <button class="standard" id="buttons" style="position:relatative;margin-left:40%;height:40;" onclick="passCommand(y)">PLAY</button>
+	 <br>
+	<button class="standard" id="buttons"style="height:40;" onclick="passCommand(-)">VOL DOWN</button> - <button class="standard" id="buttons"style="position:relatative;margin-left:40%;height:40;" onclick="passCommand(p)">PAUSE</button>
+	</br>
+	</div>
+
+	<div class="section" name="SectionH">
+	<button class="standard" id="buttons" onclick="passCommand(u)">MUTE</button><button class="standard" id="buttons" onclick="passCommand(w)">REV</button><button class="standard" id="buttons" onclick="passCommand(f)">FWD</button></br>
+	<button class="standard" id="buttons" onclick="passCommand(m)">MENU</button><button class="standard" id="buttons" onclick="passCommand(E)">PREV</button><button class="standard" id="buttons" onclick="passCommand(n)">NEXT</button></br>
+	<button class="standard" id="buttons" onclick="passCommand(r)">TITLE</button><button class="standard" id="buttons" onclick="passCommand(r)">REPEAT</button><button class="standard" id="buttons" onclick="passCommand(d)">SLOW</button></br>
+	</div>
+
+	<div class="section" name="SectionI">	
+	<button class="standard" id="buttons" onclick="passCommand(N)">ANGLE</button><button class="standard" id="buttons" onclick="passCommand(a)">AUDIO</button>
+	<button class="standard" id="buttons" onclick="passCommand(b)">SUBS</button><button class="standard" id="buttons" onclick="passCommand(z)">ZOOM</button>
+	</div>
+
+<!-- The end of original rc) -->
+
+	<div class="section" id="macro">
+	<form action="passCommand($macroinput)" id="macroForm" name="macroinput" method="post" enctype="multipart/form-data">
+	<input type="text" size="20" value="Insert macro..." name="macroinput" onblur="if (this.value == '') {this.value = 'Insert macro...';}"  onfocus="if (this.value == 'Insert macro...') {this.value = '';}" />
+	<button type="submit" id="buttons"><b>SUBMIT</b></button></form>
+	</div>
+
+</div>
+
+<body>
+</html>

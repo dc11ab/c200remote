@@ -1,0 +1,64 @@
+------------------------------------------------------------
+ Popcorn Hour C200 Web Remote Control v1.0-0001
+------------------------------------------------------------
+This app allows you to remote control a C200 via a web page.
+Use your favorite web device, be it an iPhone, a browser on
+a PC or whatever you prefer, to send commands directly to
+the C200 over the network.
+
+Learn more or give your feedback on the NMT forum:
+http://networkedmediatank.com
+
+------------------------------------------------------------
+ License
+------------------------------------------------------------
+The application was originally released under the WTFPL
+terms. Since hosted on the Google Code repo it is now sub-
+ject to the "New BSD license":
+http://www.opensource.org/licenses/bsd-license.php
+
+
+Any contribution or cheer will be seriously appreciated.
+
+------------------------------------------------------------
+ Usage
+------------------------------------------------------------
+Install and start the app via CSI and point your browser to:
+http://<your nmt ip address>:9999/c200remote_web/
+
+------------------------------------------------------------
+ Disclaimer
+------------------------------------------------------------
+The commands are not 100% working. Some may not be usable in
+all situations. An example is the PREV (previous) to skip
+back in a playlist of music tracks or photos.
+
+Another is the EJECT that slides out the disc tray, but it
+might require another command, for instance pressing source,
+before it allows you to slide the tray back in.
+
+Other known commands that are not working yet are:
+- Complete shutdown (Power Off)
+- Reboot
+
+And there might be more, but most actually work fine.
+
+------------------------------------------------------------
+ Wish list, in no particular order
+------------------------------------------------------------
+Make sexy GUI. (Some help here would be great!)
+Optimize and enhance code. (Ditto...)
+Make input field for custom macros.
+Optimize/skin for iPhone and other devices.
+Integrate with llink.
+Integrate with other nice things.
+Manage playlists.
+Browse directories on webpage.
+
+------------------------------------------------------------
+ Change log
+------------------------------------------------------------
+v1.0-0001 - 18th November 2009: First public release!
+
+
+#EOF
