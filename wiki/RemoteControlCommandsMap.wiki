@@ -78,7 +78,7 @@ The Alias is a "friendly" name given the remote command which can be extended or
 ||z||zoom||ZOOM||
 ||A|| _?_ ||(unknown)||
 ||B||source||SOURCE||
-||C|| _?_ |(unknown)||
+||C|| _?_ ||(unknown)||
 ||D||down||DOWN on the Navpad. ||
 ||E||prev||PREV: Skips to previous track in playlist, but this does not fully work?||
 ||F|| _?_ ||(unknown)||
