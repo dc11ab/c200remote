@@ -1,0 +1,116 @@
+#summary Exploring uncharted terrain on the C-200
+
+= Command server =
+
+We know of the raw socket at port 30000, but on port 8008 Firefox says:
+
+{{{This XML file does not appear to have any style information associated with it. The document tree is shown below.
+      
+−
+<syabasCommandServerXml>
+<returnValue>1</returnValue>
+<response>
+	</response>
+</syabasCommandServerXml>}}}
+
+Examining the file *libsyabas_command_server_command_system.so* and other libsyabas files we see command aliases and references to this xml schema.
+
+Will be interesting to see what future firmware revisions will enable here...
+
+= Details of appcontrol =
+{{{sh-3.00# cat appcontrol
+#!/bin/sh
+
+start_syb_framework()
+{
+    echo "Start syabas_framework..."
+    if [ -e /nmt/apps/Demo/index.html ]; then
+    	syb_framework file:///nmt/apps/Demo/index.html
+    else
+    	syb_framework 
+    fi
+}
+
+start_flashlite()
+{
+    echo "Start flashlite..."
+    command=""
+    if [ -e /tmp/app_param.txt ]; then
+      command=`cat /tmp/app_param.txt`
+    else
+      command=""
+    fi
+    
+    stagecraft --outputrect 0,0,1280,720 $command
+    cd -
+    if [ -e /tmp/app_param.txt ]; then
+    	mv /tmp/app_param.txt /tmp/app_param.txt2
+    fi
+    if [ -e /tmp/app.txt ]; then
+ 	   mv /tmp/app.txt /tmp/app.txt2
+    fi
+}
+
+start_qt()
+{
+    echo "Start qt..."
+    if [ -e /tmp/app_param.txt ]; then
+      command=`cat /tmp/app_param.txt`
+    else
+      command=""
+    fi
+    Application -qws -hd $command
+    if [ -e /tmp/app_param.txt ]; then
+    	mv /tmp/app_param.txt /tmp/app_param.txt2
+    fi
+    if [ -e /tmp/app.txt ]; then
+ 	   mv /tmp/app.txt /tmp/app.txt2
+    fi
+}
+
+start_rmvb()
+{
+    echo "Start play_genericmedia..."
+    if [ -e /tmp/rmvb.txt ]; then
+        rmvb_file=`cat /tmp/rmvb.txt`
+        if [ -n rmvb_file ]; then
+            sleep 1
+            play_genericmedia -no_disp -vcodec mpeg2 640 480 "$rmvb_file"
+        fi
+    fi
+    if [ -e /tmp/app_param.txt ]; then
+        mv /tmp/app_param.txt /tmp/app_param.txt2
+    fi
+    if [ -e /tmp/app.txt ]; then
+        mv /tmp/app.txt /tmp/app.txt2
+    fi
+}
+
+current_app="syb_framework"
+
+while [ true ]
+do
+    app=""
+    if [ -e /tmp/app.txt ]; then
+      app=`cat /tmp/app.txt`
+    else
+      app=""
+    fi
+
+    case "$app" in
+      flashlite)
+          start_flashlite
+        ;;
+      qt)
+          start_qt
+        ;;
+      rmvb)
+          start_rmvb
+        ;;
+      *)
+          start_syb_framework
+        ;;
+    esac
+done
+
+exit $?}}}
