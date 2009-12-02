@@ -4,21 +4,24 @@
 
 We know of the raw socket at port 30000, but on port 8008 Firefox says:
 
-{{{This XML file does not appear to have any style information associated with it. The document tree is shown below.
+{{{
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
       
 −
 <syabasCommandServerXml>
 <returnValue>1</returnValue>
 <response>
 	</response>
-</syabasCommandServerXml>}}}
+</syabasCommandServerXml>
+}}}
 
 Examining the file *libsyabas_command_server_command_system.so* and other libsyabas files we see command aliases and references to this xml schema.
 
 Will be interesting to see what future firmware revisions will enable here...
 
 = Details of appcontrol =
-{{{sh-3.00# cat appcontrol
+{{{
+sh-3.00# cat appcontrol
 #!/bin/sh
 
 start_syb_framework()
@@ -113,4 +116,5 @@ do
     esac
 done
 
-exit $?}}}
+exit $?
+}}}
