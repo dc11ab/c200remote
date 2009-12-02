@@ -107,7 +107,7 @@ The Alias is a "friendly" name given the remote command which can be extended or
 The following aliases seems to be used by Syabas, as found in a `cat libsyabas_command_server_command_system.so`
 
 Not sure if "repeatab_" is correct, but it seems to be just an alias for repeat.
-
+{{{
 power
 filemode
 up
@@ -165,3 +165,4 @@ red
 green
 yellow
 blue
+}}}
