@@ -102,3 +102,66 @@ The Alias is a "friendly" name given the remote command which can be extended or
 ||X|| _?_ ||(unknown)||
 ||Y|| photo<br>yellow|| PHOTO (Yellow) filter button.||
 ||Z|| _?_ ||(unknown)||
+
+== Syabas own? ==
+The following aliases seems to be used by Syabas, as found in a `cat libsyabas_command_server_command_system.so`
+
+Not sure if "repeatab_" is correct, but it seems to be just an alias for repeat.
+
+power
+filemode
+up
+down
+left
+right
+enter
+menu
+title
+info
+audio
+angle
+subtitle
+play
+stop
+pause
+eject
+rewind
+rev
+fastforward
+fwd
+slow
+repeatab_
+repeat
+previous
+prev
+next
+volumeup
+pageup
+volumedown
+pagedown
+mute
+one
+two
+three
+four
+five
+six
+seven
+eight
+nine
+zero
+capsnum
+caps/num
+setup
+delete
+tvmode
+source
+return
+suspend
+time seek
+zoom
+home
+red
+green
+yellow
+blue
