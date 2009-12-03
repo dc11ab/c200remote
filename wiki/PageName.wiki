@@ -19,7 +19,87 @@ Examining the file *libsyabas_command_server_command_system.so* and other libsya
 
 Will be interesting to see what future firmware revisions will enable here...
 
+
+
+== Form control == 
+This is found on:<br>
+ http://ip.ip.ip.ip:8088/app/player/video/action/search.php?M=&W=&dL=0&pg=1&sD=&sT=&sP=0&sY=0
+
+
+Hidden:
+{{{
+<form name="form1" action="/app/player/video/action/videolist.php">
+<input type="hidden" name="M" value="">
+<input type="hidden" name="pg" value="2p1">
+<input type="hidden" name="sM" value="t">
+
+<input type="hidden" name="sD" value="">
+<input type="hidden" name="W" value="">
+}}}
+
+Visible:
+The page renders a form with top-down input types:
+ # Name : input field with submit button, empty by default.
+ # Option - do no include subdirs : checkbox, disabled by default.
+ # Contains : dropdown list with options Contains, Equals, Starts with, Ends with
+ # Folders and files : dropdown list with options Folders and Files, Folders only, Files only
+ # Case sensitive : checkbox, disabled by default.
+
+Code for this:
+{{{
+<td width="60"><font class="label-font">Name</font></td>
+			<td width="20"><font class="label-font">:</font></td>
+
+			<td>
+				<input type="text" name="sT" value="" size="15" onkeyupset="sT" onkeyleftset="search" >&nbsp;
+				<input type="submit" value="Search" onkeydownset="sNR">
+			</td>
+		</tr>
+		<tr><td colspan="3" height="15"></td></tr>
+		<tr>
+			<td><font class="label-font">Option</font></td>
+
+			<td width="10"><font class="label-font">:</font></td>
+			<td><input type="checkbox" name="sNR" value="t" size="15" onkeyrightset="sNR" onkeyleftset="search" >
+				<font class="label-font">do not include subfolders</font></td>
+		</tr>
+		<tr><td colspan="3" height="10"></td></tr>
+		<tr>
+			<td colspan="2"></td>
+			<td>
+
+				<select name="sP" onkeyrightset="sP" onkeyleftset="search" >
+					<option value="0" selected>Contains</option>
+					<option value="1">Equals</option>
+					<option value="2">Starts with</option>
+					<option value="3">Ends with</option>
+				</select>
+			</td>
+
+		</tr>
+		<tr><td colspan="3" height="10"></td></tr>
+		<tr>
+			<td colspan="2"></td>
+			<td>
+				<select name="sY" onkeyrightset="sY" onkeyleftset="search" >
+					<option value="0" selected>Folders and Files</option>
+					<option value="1">Folders only</option>
+
+					<option value="2">Files only</option>
+				</select>
+			</td>
+		</tr>
+		<tr><td colspan="3" height="10"></td></tr>
+		<tr>
+			<td colspan="2"></td>
+			<td><input type="checkbox" name="sC" value="t" size="15" onkeydownset="sC" onkeyrightset="sC" onkeyleftset="search" >
+
+				<font class="label-font">case sensitive</font></td>
+		</tr>
+}}}
+
 = Details of appcontrol =
+A.k.a. how to invoke play_genericmedia to play!
 {{{
 sh-3.00# cat appcontrol
 #!/bin/sh
