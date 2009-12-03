@@ -39,11 +39,11 @@ Hidden:
 
 Visible:
 The page renders a form with top-down input types:
- # Name : input field with submit button, empty by default.
- # Option - do no include subdirs : checkbox, disabled by default.
- # Contains : dropdown list with options Contains, Equals, Starts with, Ends with
- # Folders and files : dropdown list with options Folders and Files, Folders only, Files only
- # Case sensitive : checkbox, disabled by default.
+ # *name="sT" value=""* = Name : input field with submit button *value="Search" onkeydownset="sNR"*
+ # *name="sNR" value="t"* = Option - do no include subdirs : checkbox, disabled by default.
+ # *name="sP" onkeyrightset="sP"* is Contains : dropdown list with options Contains, Equals, Starts with, Ends with
+ # *name="sY" onkeyrightset="sY"* Folders and files : dropdown list with options Folders and Files, Folders only, Files only
+ # *name="sC" value="t"* Case sensitive : checkbox, disabled by default.
 
 Code for this:
 {{{
