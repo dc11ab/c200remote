@@ -13,4 +13,5 @@
 == Planned future release ==
 === 1.1.0 ===
 No date announced
- * Create working iPhone skin.
+ * Create working iPhone skin (incl. fix broken re-direct link to skin)
+ * Fix "flickering" after each keypress.
