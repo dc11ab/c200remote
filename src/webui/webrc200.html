@@ -18,11 +18,11 @@
 	<!-- //
 	function passCommand(command) {
 		//command="webrc200v7.php?cmd="+command
-		document.location = "webrc200.php?cmd="+command
+		document.location = "webrc200.php?cmd="+encodeURIComponent(command);
 		}
 	function passfCommand(fcommand) {
 		//command="webrc200v7.php?fcmd="+fcommand
-		document.location = "webrc200.php?fcmd="+fcommand
+		document.location = "webrc200.php?fcmd="+encodeURIComponent(fcommand);
 		}
 	// -->
 	</SCRIPT> 
