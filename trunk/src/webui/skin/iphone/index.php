@@ -14,6 +14,7 @@ $html = <<<EOHTML
 
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
 <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-startup-image" href="images/apple-touch-startup-image.png" />
 
 <script language="javascript" type="text/javascript" src="../../control.js"></script>
 
