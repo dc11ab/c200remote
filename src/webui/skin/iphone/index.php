@@ -296,7 +296,7 @@ $html = <<<EOHTML
 
 <!-- special iPhone-style layers -->
 
-<div id="PowerPanel" style="margin-left:-5px;width:320px;background: rgb(197,204,211) url(themes/apple/img/pinstripes.png);">
+<div id="PowerPanel" style="margin-left:-5px;width:325px;background: rgb(197,204,211) url(themes/apple/img/pinstripes.png);">
     <div class="toolbar">
         <h1>Power Options</h1>
         <a class="button back" href="#Tabelle_01">Back</a>
@@ -308,7 +308,7 @@ $html = <<<EOHTML
         </ul>
 </div>
 
-<div id="AboutPanel" style="margin-left:-5px;width:320px;background: rgb(197,204,211) url(themes/apple/img/pinstripes.png);">
+<div id="AboutPanel" style="margin-left:-5px;width:325px;background: rgb(197,204,211) url(themes/apple/img/pinstripes.png);">
     <div class="toolbar">
         <h1>C200 iRemote</h1>
         <a class="button back" href="#Tabelle_01">Back</a>
@@ -372,7 +372,7 @@ $html = <<<EOHTML
 		</p>
 </div>
 
-<div id="TVModePanel" style="margin-left:-5px;width:320px;background: rgb(197,204,211) url(themes/apple/img/pinstripes.png);">
+<div id="TVModePanel" style="margin-left:-5px;width:325px;background: rgb(197,204,211) url(themes/apple/img/pinstripes.png);">
     <div class="toolbar">
         <h1>TV Mode Options</h1>
         <a class="button back" href="#Tabelle_01">Back</a>
