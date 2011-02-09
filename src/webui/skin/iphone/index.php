@@ -18,6 +18,7 @@ $html = <<<EOHTML
 
 <script language="javascript" type="text/javascript" src="../../control.js"></script>
 
+<style type="text/css" media="screen">@import "style_slice.css";</style>
 
 <!-- jQTouch Start -->
 <script src="jqtouch/jquery.1.3.2.min.js" type="application/x-javascript" charset="utf-8"></script>
@@ -25,312 +26,280 @@ $html = <<<EOHTML
 <script src="jqtouch/jqtouch.transitions.js" type="application/x-javascript" charset="utf-8"></script>
 <style type="text/css" media="screen">@import "jqtouch/jqtouch.css";</style>
 <style type="text/css" media="screen">@import "themes/apple/theme.css";</style>
-
-<script type="text/javascript" charset="utf-8">
-    var jQT = new $.jQTouch({
-        icon: 'images/apple-touch-icon-precomposed.png',
-        addGlossToIcon: false,
-        startupScreen: 'images/apple-touch-startup-image.png',
-        statusBar: 'black',
-        fixedViewport: 'true',
-        fullScreen: 'true',
-        useAnimations: 'true',
-        preloadImages: [
-            'themes/apple/img/back_button.png',
-            'themes/apple/img/back_button_clicked.png',
-            'themes/apple/img/button_clicked.png',
-            'themes/apple/img/grayButton.png',
-            'themes/apple/img/whiteButton.png',
-            'themes/apple/img/loading.gif',
-            'themes/apple/img/toggle.png',
-            'themes/apple/img/toggleOn.png',
-            'themes/apple/img/toolbar.png',
-            'themes/apple/img/thumb.png',
-            'images/apple-touch-icon.png',
-            'images/apple-touch-icon-precomposed.png',
-            'images/apple-touch-startup-image.png',
-            'images/saf_41.gif',
-            'images/saf_42.gif'
-            ]
-    });
-</script>
+<script src="jqt_init.js" type="application/x-javascript" charset="utf-8"></script>
+<script src="special_func.js" type="application/x-javascript" charset="utf-8"></script>
 <!--jQTouch End -->
 
-<!-- special reboot/shutdown script -->
-<script type="text/javascript" charset="utf-8">
-function start_reboot() {
-	passfCommand('power');
-	setTimeout( "end_reboot();", 500); 
-}
-function end_reboot() {
-	passfCommand('eject');
-} 
 
-function start_poweroff() {
-//	return passfCommand('power');
-		alert("not working atm, sorry...");
-
-//	setTimeout( "end_poweroff();", 500); 
-}
-function end_poweroff() {
-	passfCommand('delete');
-} 
-</script>
-<!-- special reboot/shutdown script -->
-
-<style>
-div.section {
-background:#eef;
-/*background:#00f;*/ /*debug color*/
-padding: 0.1em;
-border-width:0px; /*later adjustment easier*/
-border-style:solid;
-border-color:grey;
-width:310px;
-margin-left:auto;
-margin-top:2px;
-margin-right:auto;
-float:left;
-}
-div.section_a_left {
-background:#eef;
-/*background:#0f0;*/ /*debug color*/
-padding: 0.1em;
-border-width:0px;
-border-style:solid;
-border-color:grey;
-width:220px;
-margin-left:0px;
-margin-top:2px;
-float:left;
-}
-div.section_a_right {
-background:#eef;
-/*background:#f00;*/ /*debug color*/
-padding: 0.1em;
-border-width:0px;
-border-style:solid;
-border-color:grey;
-width:84px;
-margin-top:2px;
-margin-right:0px;
-float:left;
-text-align: right;
-}
-button.vtext {
-width: 80px;
-height: 31px;
-}
-button.standard {
-width:64px;
-height:20px;
-padding: 0.15em;
-margin-left:auto;
-margin-right:auto;
-}
-button.small {
-width:70px;
-height:25px;
-padding: 0.25em;
-margin-left:auto;
-margin-right:auto;
-text-align:left;
-text-indent:6px;
-}
-button.three_row {
-width:99px;
-height:28px;
-padding: 0.25em;
-margin-left:auto;
-margin-right:auto;
-}
-button.four_row {
-width:73px;
-height:23px;
-padding: 0.2em;
-margin-left:auto;
-margin-right:auto;
-}
-button.five_row {
-width:58px;
-height:25px;
-padding: 0.25em;
-}
-div.c200_remote_logo {
-float: left;
-margin-left: auto;
-margin-right: auto;
-width:57px;
-height:57px;
-background-image: url(images/apple-touch-icon-precomposed.png); 
-text-align:center;
-}
-
-#buttons {
-background-color:silver;
-color: black;
-font-family: arial, verdana, ms sans serif;
-font-weight: bold;
-font-size: 11pt; 
-}
-#buttons_small {
-background-color:silver;
-color: black;
-font-family: arial, verdana, ms sans serif;
-font-weight: bold;
-font-size: 9pt; 
-}
-
-a.five_row:link { /*Power "button" styling*/
-	text-decoration:none;
-	color:#000000;
-	border-color:#000000;
-	border-style:solid;
-	border-width:1px;
-	padding-top:4px;
-	padding-left:4px;
-	padding-right:4px;
-	padding-bottom:5px;
-}
-a.about_button:link { /*about "button" styling*/
-	text-decoration:none;
-	color:#333399;
-	font-family: arial, verdana, ms sans serif;
-	font-weight: bold;
-	font-size: 12pt;
-	margin-left:-10px; 
-}
-
-
-<!-- /* :hover is a pseudo selector to use to set the mouseover attributes */ -->
-#buttons:hover {
-background-color: #F9F9F9; }
-</style>
+<!-- onclick image swap function -->
+<!-- usage: onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)"  -->
 </head>
 
-<body style="margin-left: 5px; margin-top: 0px; background-color: #eef;">
+<body>
 
-<div id="RemoteArea" style="padding: 0.1em; height: 540px; width: 260px; margin-left: 0px; margin-top: 0px;">
-<div class="section" name="SectionA"> 
-	<!-- have to use a styled href here, does not work with buttons :( -->
-	<a class="five_row slideup" id="buttons_small" style="background-color:#cc2222;" href="#PowerPanel">POWER</a>
-
-	<button class="five_row" id="buttons_small" onclick="return passfCommand('tvmode')">TV MOD</button>
-	<button class="five_row" id="buttons_small" onclick="return passfCommand('setup')">SETUP</button>
-	<button class="five_row" id="buttons_small" onclick="return passfCommand('btsuspend')">BT SUS</button>
-	<button class="five_row" id="buttons_small" onclick="return passCommand('j')">EJECT</button> 
-</div>
-<div style="float:left; width:310px;">
-	<div class="section_a_left" name="SectionB"> 
-		<button class="small" id="buttons" onclick="return passCommand('1')">1&nbsp;&nbsp;.:/@</button>
-		<button class="small" id="buttons" onclick="return passCommand('2')">2&nbsp;&nbsp;abc</button>
-		<button class="small" id="buttons" onclick="return passCommand('3')">3&nbsp;&nbsp;def</button>
-		<br>
-		<button class="small" id="buttons" onclick="return passCommand('4')">4&nbsp;&nbsp;ghi</button>
-		<button class="small" id="buttons" onclick="return passCommand('5')">5&nbsp;&nbsp;jkl</button>
-		<button class="small" id="buttons" onclick="return passCommand('6')">6&nbsp;&nbsp;mno</button>
-		<br>
-		<button class="small" id="buttons" onclick="return passCommand('7')">7&nbsp;&nbsp;pqrs</button>
-		<button class="small" id="buttons" onclick="return passCommand('8')">8&nbsp;&nbsp;tuv</button>
-		<button class="small" id="buttons" onclick="return passCommand('9')">9&nbsp;&nbsp;def</button>
-		<br>
-		<button class="small" id="buttons" onclick="return passCommand('c')">DEL</button>
-		<button class="small" id="buttons" onclick="return passCommand('0')">0&nbsp;[spc]</button>
-		<button class="small" id="buttons" onclick="return passCommand('l')">C/NUM</button>
-		<br>
-		<button class="small" id="buttons" onclick="return passCommand('O')">HOME</button>
-		<button class="small" id="buttons" onclick="return passCommand('g')">FILE&nbsp;M</button>
-		<button class="small" id="buttons" onclick="return passCommand('H')">T SEEK</button>
+<!-- ************************* numeric GUI ************************** -->
+<div id="Tabelle_01">
+	<div id="id01-iR-GUI-num_">
+		<img id="id01_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/01_iR_GUI_num.png" width="110" height="51" alt="" />
 	</div>
-	<div class="section_a_right" name="SectionC">
-		<button class="vtext" id="buttons" style="background-color: #c22;" onclick="return passfCommand('red')">VIDEO</button>
-		<button class="vtext" id="buttons" style="background-color: #2c2;" onclick="return passfCommand('green')">MUSIC</button>
-		<button class="vtext" id="buttons" style="background-color: #cc2;" onclick="return passfCommand('yellow')">PHOTO</button>
-		<button class="vtext" id="buttons" style="background-color: #22c;" onclick="return passfCommand('blue')">ALL</button>
+	<div id="id02-iR-GUI-num_">
+		<a class="fade" href="#Tabelle_02"><img id="id02_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/02_iR_GUI_num.png" width="101" height="51" alt="" /></a>
+	</div>
+	<div id="id03-iR-GUI-num_">
+		<a class="fade" href="#Tabelle_03"><img id="id03_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/03_iR_GUI_num.png" width="109" height="51" alt="" /></a>
+	</div>
+	<div id="id04-iR-GUI-num_">
+		<a class="slideup" href="#PowerPanel"><img id="id04_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/04_iR_GUI_num.png" width="55" height="57" alt="" /></a>
+	</div>
+	<div id="id05-iR-GUI-num_">
+		<a class="slideup" href="#TVModePanel"><img id="id05_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/05_iR_GUI_num.png" width="71" height="57" alt="" /></a>
+	</div>
+	<div id="id06-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('setup');"><img id="id06_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/06_iR_GUI_num.png" width="69" height="57" alt="" /></a>
+	</div>
+	<div id="id07-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('btsetup');"><img id="id07_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/07_iR_GUI_num.png" width="70" height="57" alt="" /></a>
+	</div>
+	<div id="id08-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('eject');"><img id="id08_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/08_iR_GUI_num.png" width="55" height="57" alt="" /></a>
+	</div>
+	<div id="id09-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('1');"><img id="id09_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/09_iR_GUI_num.png" width="110" height="53" alt="" /></a>
+	</div>
+	<div id="id10-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('2');"><img id="id10_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/10_iR_GUI_num.png" width="101" height="53" alt="" /></a>
+	</div>
+	<div id="id11-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('3');"><img id="id11_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/11_iR_GUI_num.png" width="109" height="53" alt="" /></a>
+	</div>
+	<div id="id12-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('4');"><img id="id12_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/12_iR_GUI_num.png" width="110" height="50" alt="" /></a>
+	</div>
+	<div id="id13-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('5');"><img id="id13_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/13_iR_GUI_num.png" width="101" height="50" alt="" /></a>
+	</div>
+	<div id="id14-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('6');"><img id="id14_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/14_iR_GUI_num.png" width="109" height="50" alt="" /></a>
+	</div>
+	<div id="id15-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('7');"><img id="id15_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/15_iR_GUI_num.png" width="110" height="53" alt="" /></a>
+	</div>
+	<div id="id16-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('8');"><img id="id16_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/16_iR_GUI_num.png" width="101" height="53" alt="" /></a>
+	</div>
+	<div id="id17-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('9');"><img id="id17_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/17_iR_GUI_num.png" width="109" height="53" alt="" /></a>
+	</div>
+	<div id="id18-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('delete');"><img id="id18_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/18_iR_GUI_num.png" width="110" height="42" alt="" /></a>
+	</div>
+	<div id="id19-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('0');"><img id="id19_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/19_iR_GUI_num.png" width="101" height="42" alt="" /></a>
+	</div>
+	<div id="id20-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('capsnum');"><img id="id20_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/20_iR_GUI_num.png" width="109" height="42" alt="" /></a>
+	</div>
+	<div id="id21-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('home');"><img id="id21_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/21_iR_GUI_num.png" width="110" height="41" alt="" /></a>
+	</div>
+	<div id="id22-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('filemode');"><img id="id22_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/22_iR_GUI_num.png" width="101" height="41" alt="" /></a>
+	</div>
+	<div id="id23-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('timeseek');"><img id="id23_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/23_iR_GUI_num.png" width="109" height="41" alt="" /></a>
+	</div>
+	<div id="id24-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('red');"><img id="id24_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/24_iR_GUI_num.png" width="91" height="41" alt="" /></a>
+	</div>
+	<div id="id25-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('green');"><img id="id25_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/25_iR_GUI_num.png" width="70" height="41" alt="" /></a>
+	</div>
+	<div id="id26-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('yellow');"><img id="id26_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/26_iR_GUI_num.png" width="69" height="41" alt="" /></a>
+	</div>
+	<div id="id27-iR-GUI-num_">
+		<a href="#" onclick="passfCommand('blue');"><img id="id27_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/27_iR_GUI_num.png" width="90" height="41" alt="" /></a>
+	</div>
+	<div id="id28-iR-GUI-num_">
+		<img id="id28_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/28_iR_GUI_num.png" width="211" height="72" alt="" />
+	</div>
+	<div id="id29-iR-GUI-num_">
+		<a class="slideup" href="#AboutPanel"><img id="id29_iR_GUI_num" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/29_iR_GUI_num.png" width="109" height="72" alt="" /></a>
 	</div>
 </div>
 
-<div class="section" name="SectionE">
-	<button class="three_row" id="buttons" onclick="return passCommand('v')">RETURN</button>
-	<button class="three_row" id="buttons" style="background-color: #777;" onclick="return passCommand('U')">UP</button>
-	<button class="three_row" id="buttons" onclick="return passCommand('B')">SOURCE</button>
-	<br>
-	<button class="three_row" id="buttons" style="background-color: #777;" onclick="return passCommand('L')">LEFT</button>
-	<button class="three_row" id="buttons" style="background-color: #777;" onclick="return passfCommand('enter')">OK/Enter</button>
-	<button class="three_row" id="buttons" style="background-color: #777;" onclick="return passCommand('R')">RIGHT</button>
-	<br>
-	<button class="three_row" id="buttons" onclick="return passCommand('i')">INFO</button>
-	<button class="three_row" id="buttons" style="background-color: #777;" onclick="return passCommand('D')">DOWN</button>
-	<button class="three_row" id="buttons" onclick="return passCommand('s')">STOP</button>
-</div>
 
-<div style="float:left; width:310px;">
-	
-	<div class="section" name="SectionF" style="width:123px;">
-		<button class="three_row" style="height:27px;" id="buttons" onclick="return passfCommand('volup')">VOL&nbsp;+</button><br>
-		<button class="three_row" style="height:27px;" id="buttons" onclick="return passfCommand('voldown')">VOL&nbsp;&ndash;</button>
-	</div>	
 
-	<div class="c200_remote_logo" name="logo">
-		<br><br><a class="about_button slideup" href="#AboutPanel">about</a>
+
+
+<!-- ************************* quicknav GUI ************************** -->
+<div id="Tabelle_02">
+	<div id="id01-iR-GUI-qui_">
+		<a class="fade" href="#Tabelle_01"><img id="id01_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/01_iR_GUI_qui.png" width="111" height="53" alt="" /></a>
 	</div>
-
-	<div class="section" name="SectionG" style="width:117px; float:right; margin-right:-15px;">
-		<button class="three_row" style="height:27px;" id="buttons" onclick="return passCommand('y')">PLAY</button><br>
-		<button class="three_row" style="height:27px;" id="buttons" onclick="return passCommand('p')">PAUSE</button>
+	<div id="id02-iR-GUI-qui_">
+		<img id="id02_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/02_iR_GUI_qui.png" width="99" height="53" alt="" />
+	</div>
+	<div id="id03-iR-GUI-qui_">
+		<a class="fade" href="#Tabelle_03"><img id="id03_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/03_iR_GUI_qui.png" width="110" height="53" alt="" /></a>
+	</div>
+	<div id="id04-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('red');"><img id="id04_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/04_iR_GUI_qui.png" width="90" height="43" alt="" /></a>
+	</div>
+	<div id="id05-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('green');"><img id="id05_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/05_iR_GUI_qui.png" width="70" height="43" alt="" /></a>
+	</div>
+	<div id="id06-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('yellow');"><img id="id06_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/06_iR_GUI_qui.png" width="70" height="43" alt="" /></a>
+	</div>
+	<div id="id07-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('blue');"><img id="id07_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/07_iR_GUI_qui.png" width="90" height="43" alt="" /></a>
+	</div>
+	<div id="id08-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('return');"><img id="id08_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/08_iR_GUI_qui.png" width="65" height="73" alt="" /></a>
+	</div>
+	<div id="id09-iR-GUI-qui_">
+		<img id="id09_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/09_iR_GUI_qui.png" width="190" height="55" alt="" />
+	</div>
+	<div id="id10-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('source');"><img id="id10_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/10_iR_GUI_qui.png" width="65" height="73" alt="" /></a>
+	</div>
+	<div id="id11-iR-GUI-qui_">
+		<img id="id11_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/11_iR_GUI_qui.png" width="61" height="46" alt="" />
+	</div>
+	<div id="id12-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('up');"><img id="id12_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/12_iR_GUI_qui.png" width="69" height="46" alt="" /></a>
+	</div>
+	<div id="id13-iR-GUI-qui_">
+		<img id="id13_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/13_iR_GUI_qui.png" width="60" height="46" alt="" />
+	</div>
+	<div id="id14-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('volup');"><img id="id14_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/14_iR_GUI_qui.png" width="65" height="72" alt="" /></a>
+	</div>
+	<div id="id15-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('play');"><img id="id15_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/15_iR_GUI_qui.png" width="65" height="71" alt="" /></a>
+	</div>
+	<div id="id16-iR-GUI-qui_">
+		<img id="id16_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/16_iR_GUI_qui.png" width="190" height="12" alt="" />
+	</div>
+	<div id="id17-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('left');"><img id="id17_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/17_iR_GUI_qui.png" width="50" height="71" alt="" /></a>
+	</div>
+	<div id="id18-iR-GUI-qui_">
+		<img id="id18_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/18_iR_GUI_qui.png" width="11" height="71" alt="" />
+	</div>
+	<div id="id19-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('enter');"><img id="id19_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/19_iR_GUI_qui.png" width="69" height="71" alt="" /></a>
+	</div>
+	<div id="id20-iR-GUI-qui_">
+		<img id="id20_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/20_iR_GUI_qui.png" width="10" height="71" alt="" />
+	</div>
+	<div id="id21-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('right');"><img id="id21_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/21_iR_GUI_qui.png" width="50" height="71" alt="" /></a>
+	</div>
+	<div id="id22-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('pause');"><img id="id22_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/22_iR_GUI_qui.png" width="65" height="78" alt="" /></a>
+	</div>
+	<div id="id23-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('voldown');"><img id="id23_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/23_iR_GUI_qui.png" width="65" height="77" alt="" /></a>
+	</div>
+	<div id="id24-iR-GUI-qui_">
+		<img id="id24_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/24_iR_GUI_qui.png" width="190" height="9" alt="" />
+	</div>
+	<div id="id25-iR-GUI-qui_">
+		<img id="id25_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/25_iR_GUI_qui.png" width="61" height="49" alt="" />
+	</div>
+	<div id="id26-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('down');"><img id="id26_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/26_iR_GUI_qui.png" width="69" height="49" alt="" /></a>
+	</div>
+	<div id="id27-iR-GUI-qui_">
+		<img id="id27_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/27_iR_GUI_qui.png" width="60" height="49" alt="" />
+	</div>
+	<div id="id28-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('info');"><img id="id28_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/28_iR_GUI_qui.png" width="65" height="70" alt="" /></a>
+	</div>
+	<div id="id29-iR-GUI-qui_">
+		<a href="#" onclick="passfCommand('stop');"><img id="id29_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/29_iR_GUI_qui.png" width="65" height="70" alt="" /></a>
+	</div>
+	<div id="id30-iR-GUI-qui_">
+		<img id="id30_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/30_iR_GUI_qui.png" width="190" height="50" alt="" />
+	</div>
+	<div id="id31-iR-GUI-qui_">
+		<img id="id31_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/31_iR_GUI_qui.png" width="211" height="72" alt="" />
+	</div>
+	<div id="id32-iR-GUI-qui_">
+		<a class="slideup" href="#AboutPanel"><img id="id32_iR_GUI_qui" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/32_iR_GUI_qui.png" width="109" height="72" alt="" /></a>
 	</div>
 </div>
 
-<div class="section" name="SectionH">
-	<button class="three_row" id="buttons" onclick="return passCommand('u')">MUTE</button>
-	<button class="three_row" id="buttons" onclick="return passCommand('w')">REV</button>
-	<button class="three_row" id="buttons" onclick="return passCommand('f')">FWD</button>
-	<br>
-	<button class="three_row" id="buttons" onclick="return passCommand('m')">MENU</button>
-	<button class="three_row" id="buttons" onclick="return passCommand('E')">PREV</button>
-	<button class="three_row" id="buttons" onclick="return passCommand('n')">NEXT</button>
-	<br>
-	<button class="three_row" id="buttons" onclick="return passCommand('r')">TITLE</button>
-	<button class="three_row" id="buttons" onclick="return passCommand('r')">REPEAT</button>
-	<button class="three_row" id="buttons" onclick="return passCommand('d')">SLOW</button>
-	<br>
+
+
+
+<!-- ************************* advanced GUI ************************** -->
+<div id="Tabelle_03">
+	<div id="id01-iR-GUI-adv_">
+		<a class="fade" href="#Tabelle_01"><img id="id01_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/01_iR_GUI_adv.png" width="110" height="51" alt="" /></a>
+	</div>
+	<div id="id02-iR-GUI-adv_">
+		<a class="fade" href="#Tabelle_02"><img id="id02_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/02_iR_GUI_adv.png" width="101" height="51" alt="" /></a>
+	</div>
+	<div id="id03-iR-GUI-adv_">
+		<img id="id03_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/03_iR_GUI_adv.png" width="109" height="51" alt="" />
+	</div>
+	<div id="id04-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('mute');"><img id="id04_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/04_iR_GUI_adv.png" width="111" height="95" alt="" /></a>
+	</div>
+	<div id="id05-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('reverse');"><img id="id05_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/05_iR_GUI_adv.png" width="99" height="95" alt="" /></a>
+	</div>
+	<div id="id06-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('forward');"><img id="id06_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/06_iR_GUI_adv.png" width="110" height="95" alt="" /></a>
+	</div>
+	<div id="id07-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('menu');"><img id="id07_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/07_iR_GUI_adv.png" width="110" height="90" alt="" /></a>
+	</div>
+	<div id="id08-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('previous');alert('needs fix - E is not working for previous');"><img id="id08_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/08_iR_GUI_adv.png" width="101" height="90" alt="" /></a>
+	</div>
+	<div id="id09-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('next');"><img id="id09_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/09_iR_GUI_adv.png" width="109" height="90" alt="" /></a>
+	</div>
+	<div id="id10-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('title');"><img id="id10_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/10_iR_GUI_adv.png" width="111" height="83" alt="" /></a>
+	</div>
+	<div id="id11-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('repeat');"><img id="id11_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/11_iR_GUI_adv.png" width="100" height="83" alt="" /></a>
+	</div>
+	<div id="id12-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('slow');"><img id="id12_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/12_iR_GUI_adv.png" width="109" height="83" alt="" /></a>
+	</div>
+	<div id="id13-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('angle');"><img id="id13_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/13_iR_GUI_adv.png" width="89" height="69" alt="" /></a>
+	</div>
+	<div id="id14-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('audio');"><img id="id14_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/14_iR_GUI_adv.png" width="72" height="69" alt="" /></a>
+	</div>
+	<div id="id15-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('subtitle');"><img id="id15_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/15_iR_GUI_adv.png" width="71" height="69" alt="" /></a>
+	</div>
+	<div id="id16-iR-GUI-adv_">
+		<a href="#" onclick="passfCommand('zoom');"><img id="id16_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/16_iR_GUI_adv.png" width="88" height="69" alt="" /></a>
+	</div>
+	<div id="id17-iR-GUI-adv_">
+		<img id="id17_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/17_iR_GUI_adv.png" width="211" height="72" alt="" />
+	</div>
+	<div id="id18-iR-GUI-adv_">
+		<a class="slideup" href="#AboutPanel"><img id="id18_iR_GUI_adv" onclick="change_IMG(this.id)" onMouseout="change_IMG_back(this.id)" src="images_slice/18_iR_GUI_adv.png" width="109" height="72" alt="" /></a>
+	</div>
 </div>
-<div class="section" name="SectionI">
-	<button class="four_row" id="buttons" onclick="return passCommand('N')">ANGLE</button>
-	<button class="four_row" id="buttons" onclick="return passCommand('a')">AUDIO</button>
-	<button class="four_row" id="buttons" onclick="return passCommand('b')">SUBS</button>
-	<button class="four_row" id="buttons" onclick="return passCommand('z')">ZOOM</button>
-</div>
-<!-- The end of original rc) -->
-<div class="section" id="macro" style="font-family: sans-serif; font-size:0.7em;">
-	<form action="return passCommand('$macroinput')" id="macroForm" name="macroinput" method="post" enctype="multipart/form-data">
-		<input size="30" value="Insert macro..." name="macroinput" onblur="if (this.value == '') {this.value = 'Insert macro...';}" onfocus="if (this.value == 'Insert macro...') {this.value = '';}" type="text" style="width:225px;">&nbsp;&nbsp;&nbsp;
-		<button type="four_row" style="width:67px;height:17px;padding-top:-0.3em;font-size:7pt;margin-top:-4px;" class="standard" id="buttons"><b>RUN</b></button>
-    <div class="info">
-				<p style="margin-top:-7px;">Info:</p>
-        <p>Add this page to your home screen / springboard to view the custom icon, 
-        	<br>startup screen, and full screen mode.</p>
-				<br>
-				<p>Simply save it to an icon from your Safari menu:<br>
-				<br>
-				4.1 and older:<img src="images/saf_41.gif" style="float:right; margin-right:100px;" /><br>
-				<br>
-				<br>
-			4.2.1+:<img src="images/saf_42.gif" style="float:right; margin-right:100px;" /></p>
-		    </div>
-		    <ul>
-		        <li><a class="slideup" href="#AboutPanel">about</a></li>
-		    </ul>
-	</form>
-</div>
-</div>
+
 
 <!-- special iPhone-style layers -->
 
 <div id="PowerPanel" style="margin-left:-5px;width:320px;background: rgb(197,204,211) url(themes/apple/img/pinstripes.png);">
     <div class="toolbar">
         <h1>Power Options</h1>
-        <a class="button back" href="#">Back</a>
+        <a class="button back" href="#Tabelle_01">Back</a>
     </div>
         <ul>
             <li><a onclick="return passfCommand('power')" href="#">Standby Toggle</a></li>
@@ -342,25 +311,86 @@ background-color: #F9F9F9; }
 <div id="AboutPanel" style="margin-left:-5px;width:320px;background: rgb(197,204,211) url(themes/apple/img/pinstripes.png);">
     <div class="toolbar">
         <h1>C200 iRemote</h1>
-        <a class="button back" href="#">Back</a>
+        <a class="button back" href="#Tabelle_01">Back</a>
     </div> 
-    <div class="info">
+<!--    <div class="info">
     	<p style="text-align:center;"><img src="images/apple-touch-icon-precomposed.png" /></p>
 			<br>
 			<p style="margin-left:15px;"><strong>c200remote</strong> skin "C200 iRemote" by <a href="http://smashd.de" target="_blank">smashd.de</a>
     </div>
+-->
+    <div class="info">
+        <p style="margin-top:-7px;">Add this page to your home screen / springboard 
+        												<br>to view the custom icon, startup screen and 
+        												<br>full screen mode.</p>
+				<br>
+				<p>Simply save it to an icon from your Safari menu:<br>
+				<br>
+				4.1 and older:<img src="images/saf_41.gif" style="float:right; margin-right:100px;" /><br>
+				<br>
+				<br>
+			4.2.1+:<img src="images/saf_42.gif" style="float:right; margin-right:100px;" /></p>
+		</div>
+
+
 	        <ul>
 	            <li><a href="http://code.google.com/p/c200remote/" target="_blank">google code project page</a></li>
-	            <li>(c200remote svn and more)</li>
 	        </ul>
+			    <div class="info" style="margin-top:-20px;margin-bottom:-40px; height:15px;">
+			        <p style="margin-top:-15px;">
+			        	(c200remote svn and more)
+			        </p>
+			    </div>
+
 	        <ul>
 	            <li><a href="http://www.networkedmediatank.com/showthread.php?tid=30168" target="_blank">forum thread</a></li>
-	            <li>(at networkedmediatank.com)</li>
 	        </ul>
+			    <div class="info" style="margin-top:-20px;margin-bottom:-40px; height:15px;">
+			        <p style="margin-top:-15px;">
+			        	(at networkedmediatank.com)
+			        </p>
+			    </div>
+
+	        <ul>
+	            <li><a href="../iphone_fs/" target="_blank">Old 1-page layout</a></li>
+	        </ul>
+			    <div class="info" style="margin-top:-20px;margin-bottom:-40px; height:15px;">
+			        <p style="margin-top:-15px;">
+			        	(runs faster)
+			        </p>
+			    </div>
+
+	        <ul>
+	            <li><a href="http://smashd.de" target="_blank">smashd.de</a></li>
+	        </ul>
+			    <div class="info" style="margin-top:-20px;margin-bottom:-40px; height:15px;">
+			        <p style="margin-top:-15px;">
+			        	(creator of this theme, donations are welcome :D)
+			        </p>
+			    </div>
 			</p>
 		</p>
 </div>
 
+<div id="TVModePanel" style="margin-left:-5px;width:320px;background: rgb(197,204,211) url(themes/apple/img/pinstripes.png);">
+    <div class="toolbar">
+        <h1>TV Mode Options</h1>
+        <a class="button back" href="#Tabelle_01">Back</a>
+    </div>
+        <ul>
+            <li><a onclick="start_TVMode('0');" href="#">Auto TV mode</a></li>
+            <li><a onclick="start_TVMode('1');" href="#">Composite NTSC 480i</a></li>
+            <li><a onclick="start_TVMode('2');" href="#">Composite PAL 576i</a></li>
+            <li><a onclick="start_TVMode('4');" href="#">Component 720p60</a></li>
+            <li><a onclick="start_TVMode('5');" href="#">Component 1080i60</a></li>
+            <li><a onclick="start_TVMode('6');" href="#">Component 1080p60</a></li>
+            <li><a onclick="start_TVMode('7');" href="#">HDMI 720p60</a></li>
+            <li><a onclick="start_TVMode('8');" href="#">HDMI 1080i60</a></li>
+            <li><a onclick="start_TVMode('9');" href="#">HDMI 1080p60</a></li>
+            <li><a onclick="start_TVMode('C');" href="#">Toggle 50/60Hz</a></li>
+            <li><a onclick="start_TVMode('T');" href="#">Manual TV Mode</a></li>
+        </ul>
+</div>
 
 </body>
 </html>

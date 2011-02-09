@@ -1,7 +1,7 @@
 {
     appinfo_format="1",
     name="c200remote",
-    version="1.0.1",
+    version="2.2.1",
     enabled="1",
     webui_path="#PATH#/webui"
 }
