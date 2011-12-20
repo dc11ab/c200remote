@@ -31,6 +31,10 @@ t=Title r=Repeat d=Slow
 N=Angle a=Audio b=Subtitle z=Zoom
 </pre>
 
+
+Note: some of these commands may have changed over the course of firmware updates. It is [http://www.networkedmediatank.com/showthread.php?tid=30168&pid=528970#pid528970 reported] that "E" for "Previous" now is "v", at least in Bluray navigation. "E" rather seems to correspond to the "Back"-button. You may find other reports in this thread:
+http://www.networkedmediatank.com/showthread.php?tid=30168&pid=528970#pid528970
+
 == 0-9 a-Z ==
 For a full explanation of the remote control functions, please read the NMT wiki:<br>
 http://www.networkedmediatank.com/wiki/index.php/Remote_Control_C-200<br>
